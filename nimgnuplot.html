@@ -16,10 +16,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.2">
+<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.4">
 
 <!-- JS -->
-<script type="text/javascript" src="dochack.js?v=2.2.2"></script>
+<script type="text/javascript" src="dochack.js?v=2.2.4"></script>
 </head>
 <body>
   <div class="document" id="documentId">
@@ -71,6 +71,9 @@
 <li><a class="reference" href="#addData%2CGnuplotScript%2Cstring%2Cseq%5BDataFrame%5D%2Cchar" title="addData(self: var GnuplotScript; dataLabel: string; dataframes: seq[DataFrame];
         separator: char = ','): seq[string]">addData(self: var GnuplotScript; dataLabel: string; dataframes: seq[DataFrame];
         separator: char = ','): seq[string]</a></li>
+<li><a class="reference" href="#addData%2CGnuplotScript%2Cstring%2CT%2Cchar" title="addData[T](self: var GnuplotScript; dataLabel: string; data: T;
+           separator: char = ','): seq[string]">addData[T](self: var GnuplotScript; dataLabel: string; data: T;
+           separator: char = ','): seq[string]</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">addDataIndexed
@@ -85,8 +88,8 @@
   <li><a class="reference" href="#cmd%2CGnuplotScript%2Cstring" title="cmd(self: var GnuplotScript; commands: string): void">cmd(self: var GnuplotScript; commands: string): void</a></li>
 
 </ul>
-<ul class="simple nested-toc-section">escape_enhanced
-  <li><a class="reference" href="#escape_enhanced%2Cstring" title="escape_enhanced(input: string): string">escape_enhanced(input: string): string</a></li>
+<ul class="simple nested-toc-section">escapeEnhanced
+  <li><a class="reference" href="#escapeEnhanced%2Cstring" title="escapeEnhanced(input: string): string">escapeEnhanced(input: string): string</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">execute
@@ -185,6 +188,15 @@
     
   </dd>
 </div>
+<div id="addData,GnuplotScript,string,T,char">
+  <dt><pre><span class="Keyword">proc</span> <a href="#addData%2CGnuplotScript%2Cstring%2CT%2Cchar"><span class="Identifier">addData</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="nimgnuplot.html#GnuplotScript"><span class="Identifier">GnuplotScript</span></a><span class="Other">;</span> <span class="Identifier">dataLabel</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span>
+                <span class="Identifier">separator</span><span class="Other">:</span> <span class="Identifier">char</span> <span class="Other">=</span> <span class="CharLit">','</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+  <dd>
+    
+    Generic addData[T](). To work, simply define toCsvString() for your arbitrary tabular data type.
+    
+  </dd>
+</div>
 
 </div>
 <div id="addDataIndexed-procs-all">
@@ -213,9 +225,9 @@
 </div>
 
 </div>
-<div id="escape_enhanced-procs-all">
-  <div id="escape_enhanced,string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#escape_enhanced%2Cstring"><span class="Identifier">escape_enhanced</span></a><span class="Other">(</span><span class="Identifier">input</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<div id="escapeEnhanced-procs-all">
+  <div id="escapeEnhanced,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#escapeEnhanced%2Cstring"><span class="Identifier">escapeEnhanced</span></a><span class="Other">(</span><span class="Identifier">input</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     For enhanced mode text, escape all enhancement control characters
@@ -358,7 +370,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2025-09-21 15:28:02 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2025-09-22 21:34:57 UTC</small>
       </div>
     </div>
   </div>
