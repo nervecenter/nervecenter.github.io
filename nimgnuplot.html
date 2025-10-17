@@ -158,7 +158,7 @@
   <dt><pre><a href="nimgnuplot.html#GnuplotScript"><span class="Identifier">GnuplotScript</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
-    GnuplotScript is a stateful object. Data, command, and plot procs are called to accumulate a script. Execute proc sends the script to gnuplot via exec.
+    A stateful object; <tt class="docutils literal"><span class="pre"><span class="Identifier">addData</span></span></tt>, <tt class="docutils literal"><span class="pre"><span class="Identifier">cmd</span></span></tt>, and <tt class="docutils literal"><span class="pre"><span class="Identifier">plot</span></span></tt> procs are called to accumulate a script inside of it. The <tt class="docutils literal"><span class="pre"><span class="Identifier">execute</span></span></tt> proc sends the script to gnuplot via an <tt class="docutils literal"><span class="pre"><span class="Identifier">exec</span></span></tt> syscall.
     
   </dd>
 </div>
@@ -175,7 +175,7 @@
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Add data in the form of a CSV string. Provide the correct separator to properly inform gnuplot of the data's format.
+    Add data in the form of a CSV string to the gnuplot script with a label. Provide the correct separator to properly inform gnuplot of the data's format.
     
   </dd>
 </div>
@@ -186,7 +186,7 @@
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Add a single dataframe to the gnuplot script. Returns the column headers in order.
+    Add a single dataframe to the gnuplot script with a label. Returns the column headers in order.
     
   </dd>
 </div>
@@ -197,7 +197,7 @@
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Laterally concatenate dataframes of different lengths into a single CSV and add to the gnuplot script. Returns the column headers in order.
+    Laterally concatenate dataframes of different lengths into a single CSV and add it to the gnuplot script with a label. Returns the column headers in order.
     
   </dd>
 </div>
@@ -206,7 +206,7 @@
                 <span class="Identifier">separator</span><span class="Other">:</span> <span class="Identifier">char</span> <span class="Other">=</span> <span class="CharLit">','</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
   <dd>
     
-    Generic addData[T](). To work, simply define toCsvString() for your arbitrary tabular data type.
+    Generic form of <tt class="docutils literal"><span class="pre"><span class="Identifier">addData</span><span class="Punctuation">(</span><span class="Punctuation">)</span></span></tt>. To work, simply define <tt class="docutils literal"><span class="pre"><span class="Identifier">toCsvString</span><span class="Punctuation">(</span><span class="Punctuation">)</span></span></tt> for your arbitrary tabular data type.
     
   </dd>
 </div>
@@ -220,7 +220,7 @@
                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Add multiple dataframes to the gnuplot script, with the same label but appended with an index. Returns each dataframe's column headers in order, each in a seq.
+    Add multiple dataframes to the gnuplot script, all with the same label prefix but appended with an index number. Returns each dataframe's column headers in order, each in a <tt class="docutils literal"><span class="pre"><span class="Identifier">seq</span></span></tt>.
     
   </dd>
 </div>
@@ -256,7 +256,7 @@
     <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Execute the accumulated gnuplot script. Saves the generated image plot to a temp file, and returns the temp file's contents as a byte string.
+    Execute the accumulated gnuplot script. Saves the script to a temp file, invokes gnuplot, saves the generated image bytes to a temp file, and returns the temp file's contents as a byte string.
     
   </dd>
 </div>
@@ -268,7 +268,7 @@
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Add a gnuplot iteration block with arbitrary commands.
+    Add a gnuplot iteration block to the script with arbitrary commands.
     
   </dd>
 </div>
@@ -281,7 +281,7 @@
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Initialize a stateful gnuplot object which can take commands and eventually execute the gnuplot exe to generate a plot file.
+    Initialize a stateful gnuplot object which can take commands and eventually execute gnuplot to generate a plot file.
     
   </dd>
 </div>
@@ -293,7 +293,7 @@
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Plot a single element.
+    Add a plot command to the script with a single plot element.
     
   </dd>
 </div>
@@ -302,7 +302,7 @@
           <span class="Identifier">plotCmd</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;plot&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Plot multiple elements.
+    Add a plot command to the script with multiple plot elements.
     
   </dd>
 </div>
@@ -314,7 +314,7 @@
               <span class="Identifier">plotCmd</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;plot&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Generate a plot with one element from one data label.
+    Add a <tt class="docutils literal"><span class="pre"><span class="Identifier">plot</span></span></tt> command to the script with one element from one data label.
     
   </dd>
 </div>
@@ -324,7 +324,7 @@
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Generate a plot with multiple elements from one data label.
+    Add a <tt class="docutils literal"><span class="pre"><span class="Identifier">plot</span></span></tt> command to the script with with multiple elements from one data label.
     
   </dd>
 </div>
@@ -334,7 +334,7 @@
               <span class="Identifier">plotCmd</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;plot&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Generate a plot with multiple elements, each from its own data label.
+    Add a <tt class="docutils literal"><span class="pre"><span class="Identifier">plot</span></span></tt> command to the script with multiple elements, each from its own data label.
     
   </dd>
 </div>
@@ -383,7 +383,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2025-10-01 02:06:43 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2025-10-17 00:23:31 UTC</small>
       </div>
     </div>
   </div>
