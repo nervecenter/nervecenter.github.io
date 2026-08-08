@@ -33,8 +33,27 @@
                 max-width: 9in;
             }
 
+            #info {
+                text-align:center;
+            }
+
+            #links {
+                text-align:center;
+                margin-top: 0.5em;
+            }
+
             p {
                 text-indent: 2em;
+            }
+
+            #summary {
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+
+            #summary p {
+                margin-top: 0in;
+                margin-bottom: 0in;
             }
 
             h2 {
@@ -77,13 +96,16 @@
     <body>
         <div id="main-column">
             <h1 style="text-align:center">Chris Collazo, M.S.</h1>
-            <div style="text-align:center">
+            <div id="info">
                 Programmer, Software & Data Engineer</br>
                 Florida, USA</br>
-                </br>
+            </div>
+            <div id="links">
                 <a href="docs/chris_collazo_cv_2026.pdf">CV</a> • <a href="https://github.com/nervecenter">Github</a> • <a href="mailto:nervecenter7@gmail.com">Email</a>
             </div>
-            <p>Programmer and language enthusiast. I enjoy exploring how software can <i>most</i> practically model and affect reality. I enjoy functional languages, especially the Lisp family, and adapting their principles for building software with native-compiled systems languages.</p>
+            <div id="summary">
+                <p>Programmer and language enthusiast. I enjoy exploring how software can <i>most</i> practically model and affect reality. I enjoy functional languages, especially the Lisp family, and adapting their principles for building software with native-compiled systems languages. I enjoy extracting maximum performance from abstractions which simplify, such as Nim's single-ownership value semantics.</p>
+            </div>
             <h2>Talks</h2>
             <ul>
                 <li><b>The Virtues of Values (NimConf 2026)</b> - <a href="https://www.youtube.com/watch?v=Ki4-kbSCnXs">https://www.youtube.com/watch?v=Ki4-kbSCnXs</a>
@@ -107,11 +129,14 @@
                 <li><b>Collazo, C.</b>, Vargas, I., Cara, B., Weinheimer, C. J., Grabau, R. P., Goldgof, D., Hall, L., Wickline, S. A., & Pan, H. (2024). <i>Synergizing Deep Learning-Enabled Preprocessing and Human–AI Integration for Efficient Automatic Ground Truth Generation.</i> MDPI Bioengineering, 11(5), 434. <a href="https://doi.org/10.3390/bioengineering11050434">https://doi.org/10.3390/bioengineering11050434</a></a>
                     <ul>
                         <li>Summary: We formulate a “self-improvement” process for a convolutional segmentation model wherein it iteratively normalizes and retrains on its training data, called <i>bootstrapping</i>, improving its accuracy over time.</li>
-                        <li>Source code: <a href="https://github.com/nervecenter/bsp-experiment">https://github.com/nervecenter/bsp-experiment</a></li>
+                        <li><a href="docs/bioengineering-11-00434.pdf">PDF</a> • <a href="https://github.com/nervecenter/bsp-experiment">Source code</a></li>
                     </ul>
                 </li>
                 <li>
-                    <b>Collazo, C.</b>, Vargas, I., Cara, B., Weinheimer, C. J., Grabau, R. P., Goldgof, D., Hall, L., Wickline, S. A., & Pan, H. (2019). <i>Transferrable Deep Learning Algorithms for Identifying Area At Risk in Acute Myocardial Infarction.</i> Abstract. Biomedical Imaging and Instrumentation, Deep Learning in Microstructural Imaging (Oral), BMES Annual Meeting 2019. <a href="https://submissions.mirasmart.com/SecureView/BMESArchive/radhjz5inj2.pdf">https://submissions.mirasmart.com/SecureView/BMESArchive/radhjz5inj2.pdf</a>
+                    <b>Collazo, C.</b>, Vargas, I., Cara, B., Weinheimer, C. J., Grabau, R. P., Goldgof, D., Hall, L., Wickline, S. A., & Pan, H. (2019). <i>Transferrable Deep Learning Algorithms for Identifying Area At Risk in Acute Myocardial Infarction.</i> Abstract. Biomedical Imaging and Instrumentation, Deep Learning in Microstructural Imaging (Oral), BMES Annual Meeting 2019.
+                    <ul>
+                        <li><a href="docs/Chris Collazo BME Abstract Final Draft.pdf">PDF</a> • <a href="docs/Chris Collazo BMES Extended Abstract - Final Draft Revised.pdf">PDF Extended</a></li>
+                    </ul>
                 </li>
             </ul>
             <h2>Hobby</h2>
