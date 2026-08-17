@@ -3,99 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Chris Collazo</title>
-        <style>
-            /*@font-face {
-                font-family: "EB Garamond";
-                src: url("fonts/EBGaramond-VariableFont_wght.woff2") format('woff2');
-            }
-            @font-face {
-                font-family: "EB Garamond";
-                src: url("fonts/EBGaramond-Italic-VariableFont_wght.woff2") format('woff2');
-                font-style: italic;
-            }*/
-
-            @font-face {
-                font-family: "Libertinus Serif Display";
-                src: url("fonts/LibertinusSerifDisplay-Regular.woff2") format('woff2');
-            }
-
-            body {
-                /*font-family: "EB Garamond", "serif";*/
-                font-family: "Libertinus Serif Display", "serif";
-                background-color: #EEEEEE;
-                font-size: 14pt;
-            }
-
-            #main-column {
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 0.5in;
-                max-width: 9in;
-            }
-
-            #info {
-                text-align:center;
-            }
-
-            #links {
-                text-align:center;
-                margin-top: 0.5em;
-            }
-
-            p {
-                text-indent: 2em;
-            }
-
-            #summary {
-                margin-top: 1em;
-                margin-bottom: 1em;
-            }
-
-            #summary p {
-                margin-top: 0in;
-                margin-bottom: 0in;
-            }
-
-            h2 {
-                font-variant: small-caps;
-            }
-
-            h3 {
-                margin-left: 0.2in;
-            }
-
-            ul {
-                list-style-type: "‣  ";
-            }
-            ul ul {
-                list-style-type: "–  ";
-            }
-            #main-column > ul > li {
-                margin-bottom: 0.2in;
-            }
-            li {
-                margin-top: 0.04in;
-            }
-
-            a {
-                color: #3182CE;
-                text-decoration: underline;
-                text-decoration-color: rgba(49, 130, 206, 0.4);
-                text-decoration-thickness: 1.5px;
-                text-underline-offset: 3px;
-            }
-
-            a:hover {
-                color: #2B6CB0;
-                text-decoration-color: #2B6CB0;
-                text-decoration-thickness: 2px;
-            }
-
-            a:visited {
-                color: #553C9A;
-                text-decoration-color: rgba(85, 60, 154, 0.4);
-            }
-        </style>
+        <link rel="stylesheet" href="cc_style.css">
     </head>
     <body>
         <div id="main-column">
@@ -110,6 +18,11 @@
             <div id="summary">
                 <p>Programmer and language enthusiast. I enjoy exploring how software can <i>most</i> practically model and affect reality. I enjoy functional languages, especially the Lisp family, and adapting their principles for building software with native-compiled systems languages. I enjoy extracting maximum performance from abstractions which simplify, such as Nim's single-ownership value semantics.</p>
             </div>
+            <h2>Blog</h2>
+            <h3 class="subsection-header">Hobby</h3>
+            <ul>
+                <li><a href="algomancy_a_platonic_ideal.html">Algomancy: A Platonic Ideal</a> - August 17, 2026</li>
+            </ul>
             <h2>Talks</h2>
             <ul>
                 <li><b>The Virtues of Values (NimConf 2026)</b> - <a href="https://www.youtube.com/watch?v=Ki4-kbSCnXs">https://www.youtube.com/watch?v=Ki4-kbSCnXs</a>
@@ -144,7 +57,7 @@
                 </li>
             </ul>
             <h2>Hobby</h2>
-            <h3>Board Games</h3>
+            <h3 class="subsection-header">Board Games</h3>
             <ul>
                 <li><b>6mm Kinetic (Unfinished Prototype)</b> - A 6mm tabletop wargame inspired by BattleTech and OnePageRules. Made using Typst. Most definitely unfinished. <a href="https://www.steelrift.com/">Steel Rift</a> came along, and is much more clever and cinematic while hitting all the gameplay beats I wanted to. Play that instead. :)
                     <ul>

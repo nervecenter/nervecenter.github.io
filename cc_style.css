@@ -1,0 +1,124 @@
+/* Copyright Chris Collazo */
+
+/*@font-face {
+    font-family: "EB Garamond";
+    src: url("fonts/EBGaramond-VariableFont_wght.woff2") format('woff2');
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("fonts/EBGaramond-Italic-VariableFont_wght.woff2") format('woff2');
+    font-style: italic;
+}*/
+
+@font-face {
+    font-family: "Libertinus Serif Display";
+    src: url("fonts/LibertinusSerifDisplay-Regular.woff2") format('woff2');
+}
+
+body {
+    /*font-family: "EB Garamond", "serif";*/
+    font-family: "Libertinus Serif Display", "serif";
+    background-color: #EEEEEE;
+    font-size: 14pt;
+}
+
+#main-column {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5in;
+    max-width: 9in;
+}
+
+#info {
+    text-align:center;
+}
+
+#links {
+    text-align:center;
+    margin-top: 0.5em;
+}
+
+p {
+    text-indent: 2em;
+}
+
+#summary {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#summary p {
+    margin-top: 0in;
+    margin-bottom: 0in;
+}
+
+h2 {
+    font-variant: small-caps;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h4 {
+    font-size: 1.1em;
+    color: #555555;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.subsection-header {
+    margin-left: 0.2in;
+}
+
+ul {
+    list-style-type: "‣  ";
+}
+ul ul {
+    list-style-type: "–  ";
+}
+#main-column > ul > li {
+    margin-bottom: 0.2in;
+}
+li {
+    margin-top: 0.04in;
+}
+
+a {
+    color: #3182CE;
+    text-decoration: underline;
+    text-decoration-color: rgba(49, 130, 206, 0.4);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #2B6CB0;
+    text-decoration-color: #2B6CB0;
+    text-decoration-thickness: 2px;
+}
+
+a:visited {
+    color: #553C9A;
+    text-decoration-color: rgba(85, 60, 154, 0.4);
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caption {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    text-align: center;
+    text-indent: 0;
+}
+
+#main-column > .compact-list > li {
+    margin-top: 0.04in;
+    margin-bottom: 0.04in;
+}
