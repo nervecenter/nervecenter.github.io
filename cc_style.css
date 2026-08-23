@@ -26,11 +26,16 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 0.5in;
+    margin-bottom: 1in;
     max-width: 9in;
 }
 
+.article-header {
+    text-align: center;
+}
+
 #info {
-    text-align:center;
+    text-align: center;
 }
 
 #links {
